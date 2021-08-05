@@ -1,0 +1,38 @@
+{
+    "env": {
+        "test": {
+            "plugins": ["@babel/plugin-transform-modules-commonjs"]
+        }
+    },
+    "presets": [
+        "@babel/preset-react",
+        "@babel/preset-typescript",
+        [
+            "@babel/env",
+            {
+                "modules": "commonjs",
+                "targets": {
+                    "ie": 9,
+                },
+            }
+        ]
+    ],
+    "plugins": [
+        "add-module-exports",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-syntax-dynamic-import",
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "helpers": true,
+                "regenerator": true
+            }
+        ],
+        [
+            "@babel/plugin-proposal-object-rest-spread",
+            {
+                "useBuiltIns": true
+            }
+        ]
+    ]
+}

@@ -1,0 +1,224 @@
+@import "./../../node_modules/codemirror/lib/codemirror.css";
+
+/* paddings */
+
+.p-15 {
+  padding: 15px;
+}
+
+.p-19 {
+  padding: 19px;
+}
+
+.p-0-15 {
+  padding: 0 15px;
+}
+
+/* margins */
+.m-10 {
+  margin: 10px;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.m-t-30 {
+  margin-top: 30px;
+}
+
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+.m-b-20 {
+  margin-bottom: 20px;
+}
+
+.m-l-20 {
+  margin-left: 20px !important;
+}
+
+.m-0-30 {
+  margin: 0 30px !important;
+}
+
+.m-r-10 {
+  margin-right: 10px !important;
+}
+
+.outline-no {
+  outline: none !important;
+}
+
+/*widths*/
+.w-200 {
+  width: 200px;
+}
+
+.w-88-pct {
+  width: 88%;
+}
+
+/* max heights */
+.m-h-560 {
+  max-height: 560px;
+}
+
+/* colors */
+$dark-blue: rgba(0, 48, 108, 0.9);
+$gray: rgb(224, 224, 224);
+
+
+.tf-text-right {
+
+  input {
+    text-align: right;
+  }
+}
+
+.label-m-0 {
+
+  label {
+    margin: 0;
+  }
+}
+
+.no-margin {
+  margin: 0;
+}
+
+
+.dark-blue-header {
+  border: 0 solid;
+  background-color: $dark-blue;
+}
+
+.gray-border-bottom {
+  border-bottom: 1px solid $gray;
+}
+
+.table-header-column {
+  color: black !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-size: 15px !important;
+  border: 1px solid #bee5eb;
+  white-space: normal !important;
+
+  &.custom {
+    width: 15%;
+  }
+
+  &.white-text {
+    color: white !important;
+  }
+}
+
+.file-input {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.common-table-container {
+  padding: 80px 24px 24px 24px;
+}
+
+.common-table-button {
+  margin-bottom: 10px;
+}
+
+.dialog-content {
+  padding: 5px !important;
+}
+
+.drop-down-menu-style-1 {
+  display: grid;
+  grid-template-rows: 20px 40px;
+}
+
+.drop-down-menu-header-style-1 {
+  padding-right: 25px;
+}
+
+.main-header-style-1 {
+  padding-top: 1.5%;
+  padding-bottom: 1%;
+  padding-left: 1.1%;
+}
+
+.rotate-180 {
+  -webkit-transform: rotate(-180deg); /* Chrome y Safari */
+  -moz-transform: rotate(-180deg); /* Firefox */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+  -o-transform: rotate(-180deg); /* Opera */
+}
+
+.snackbar-button {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.helper-text-error {
+  color: red !important;
+
+  &.with-margin {
+    margin: 0 8px !important;
+    width: 97%;
+  }
+}
+
+.form-control {
+  width: 97%;
+  margin: 8px !important;
+}
+
+.large-form-control {
+  margin: 24px !important;
+}
+
+.text-field {
+  width: 97%;
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+
+  &.with-top-margin {
+    margin-top: 15px;
+  }
+}
+
+.text-field-small {
+  width: 40%;
+}
+
+.font-size-small {
+  font-size: small !important;
+}
+
+.raised-button {
+  margin: 15px 0 15px 15px;
+  padding: 0 5px;
+}
+
+.input-red-color {
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+  width: 97%;
+  & > div > input {
+    color: #ff0015;
+  }
+}
+
+.clipboard-helper {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}

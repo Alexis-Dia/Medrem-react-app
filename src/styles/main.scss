@@ -1,0 +1,38 @@
+@import 'base';
+@import '~bootstrap/scss/bootstrap.scss';
+@import './common.scss';
+
+// Some best-practice CSS that's useful for most apps
+// Just remove them if they're not what you want
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./HelveticaNeue.woff') format('woff'),
+  url('./HelveticaNeue.ttf') format('truetype');
+}
+html {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto !important;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+}

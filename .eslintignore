@@ -1,0 +1,7 @@
+*.test.*
+*.spec.*
+build/**
+src/lib
+src/main.js
+src/normalize.js
+src/tempPolyfills.js
