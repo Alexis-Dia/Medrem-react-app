@@ -44,6 +44,7 @@ import {
     WS_MESSAGE_EXPIRE_MESSAGE,
 } from "../../properties/properties";
 //import { CommonUtils } from "../../utils";
+import { BottomNavigation } from '@material-ui/core';
 import { changeLocale } from "../../api/lang/localeActions";
 import { onCloseClicked, logOut } from "../../api/login/loginActions";
 import { fetchLanguages } from "../../api/common/commonActions";
@@ -52,9 +53,8 @@ import { FlashMessageType } from "../../types/flash";
 import { RootState } from "../../store/reducers";
 import browserHistory from "../../routes/history";
 import LogoIcon from "./img/navigationBarLayout/medrem-logo.png";
-import SystemInformationSnackbar from "./snackbar/SystemInformationSnackbar";
 import PublishedSystemInformation from "../../routes/homeView/PublishedSystemInformation/PublishedSystemInformation";
-import "./NavigationBarLayout.scss";
+import "./FooterLayout.scss";
 import { WithSnackbarProps } from "../../lib/notistack/build";
 
 import project from "../../../project.config";
@@ -79,7 +79,7 @@ interface State {
     language: string;
 }
 
-class NavigationBarLayout extends React.Component<Props, State> {
+class FooterLayout extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
@@ -124,14 +124,6 @@ class NavigationBarLayout extends React.Component<Props, State> {
             //const suitableTranslations = filteredTranslations.length === 1 ? filteredTranslations : translations;
             //const text = `${informationType} | ${suitableTranslations[0].text}`;
 
-            const snackbarOptions = {
-                autoHideDuration: 60000,
-                persist: true,
-                content: (key: number) => (
-                    <SystemInformationSnackbar id={key} text={"text"} onShowAll={() => this.toggleSystemInformationModal()} />
-                ),
-            };
-            this.props.enqueueSnackbar("", snackbarOptions);
         }
     }
 
@@ -228,101 +220,7 @@ class NavigationBarLayout extends React.Component<Props, State> {
         const allFeatures = localStorage.getItem("features");
 
         return (
-            <MuiThemeProvider>
-                <React.Fragment>
-                    <Helmet>
-                        <title>
-                            {this.props.intl.formatMessage({ id: "applicationName", defaultMessage: "Medical reminders" })}
-                        </title>
-                    </Helmet>
-                    <AppBar
-                        className="app-bar-container"
-                        title={<img className="logo-icon" src={LogoIcon} />}
-                        iconElementLeft={
-                            <IconButton className={`${isAuthenticated ? "" : "d-none"}`} iconStyle={{ fill: "#000000" }}>
-                                <NavigationMenu />
-                            </IconButton>
-                        }
-                        style={{ background: "#ffffff" }}
-                        onLeftIconButtonClick={() => this.toggleMenu()}
-                    >
-                        <Toolbar style={{ backgroundColor: "#ffffff" }}>
-                            <ToolbarGroup>
-                                <IconMenu
-                                    iconButtonElement={
-                                        <IconButton>
-                                            <LanguageIcon />
-                                        </IconButton>
-                                    }
-                                    onItemClick={this.handleSetLanguage}
-                                    value={this.state.language.toUpperCase()}
-                                    anchorOrigin={{ horizontal: "right", vertical: "top" }}
-                                    targetOrigin={{ horizontal: "right", vertical: "top" }}
-                                    iconStyle={{ fill: "#000000", marginTop: "2px" }}
-                                >
-                                    <MenuItem value={EN.toUpperCase()} primaryText={EN.toUpperCase()} />
-                                    <MenuItem value={DE.toUpperCase()} primaryText={DE.toUpperCase()} />
-                                    <MenuItem value={FR.toUpperCase()} primaryText={FR.toUpperCase()} />
-                                </IconMenu>
-                                {isAuthenticated &&
-                                <React.Fragment>
-                                    <ToolbarSeparator />
-                                    <IconButton iconStyle={{ fill: "#000000" }} onClick={() => this.logout()}>
-                                        <ActionPowerSettingsNew />
-                                    </IconButton>
-                                </React.Fragment>
-                                }
-                            </ToolbarGroup>
-                        </Toolbar>
-                    </AppBar>
-                    <div className="drower-main-1">
-                        <Drawer
-                            open={this.state.isMenuOpen}
-                            docked={false}
-                            onRequestChange={() => this.toggleMenu()}
-                            overlayStyle={{ zIndex: 1, opacity: 0.25 }}
-                            containerStyle={{
-                                top: "1px",
-                                zIndex: 99,
-                                position: "absolute",
-                                backgroundColor: "#ffffff",
-                                height: "1200px",
-                            }}
-                        >
-                            <div className="drower-main-2">
-                                <nav className="navbar navbar-light navbar-expand-md">
-                                    <div className="navbar-collapse collapse w-100">
-                                        {isAuthenticated &&
-                                        <List
-                                            component="nav"
-                                            style={{
-                                                width: "100%",
-                                            }}
-                                        >
-                                            <ListItem button onClick={this.handleClickIndexPage} disableGutters>
-                                                <ListItemText primary={<FormattedMessage id="home" defaultMessage="Home" />} />
-                                            </ListItem>
-                                            <Divider />
-                                        </List>
-                                        }
-                                    </div>
-                                </nav>
-                            </div>
-                        </Drawer>
-                    </div>
-                    <Dialog
-                        open={this.state.isSystemInformationModalOpen}
-                        className="published-sys-info-modal"
-                        fullWidth
-                        maxWidth="md"
-                        onClose={() => this.toggleSystemInformationModal()}
-                    >
-                        <ModalBody>
-                            <PublishedSystemInformation />
-                        </ModalBody>
-                    </Dialog>
-                </React.Fragment>
-            </MuiThemeProvider>
+            <div id="footer">Footer</div>
         );
     };
 }
@@ -348,4 +246,4 @@ const connector = connect(mapStateToProps, mapDispatchToProps);
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
 //@ts-ignore
-export default withSnackbar(connector(injectIntl(NavigationBarLayout)));
+export default withSnackbar(connector(injectIntl(FooterLayout)));

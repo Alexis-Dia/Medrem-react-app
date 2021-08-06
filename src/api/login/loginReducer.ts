@@ -20,7 +20,7 @@ import {
 } from "../../properties/properties";
 
 const initialState = {
-    isAuthenticated: true,
+    isAuthenticated: false,
     onCloseClicked: true,
     user: {},
 };
@@ -48,7 +48,7 @@ export default (state: LoginState = initialState, action?: LoginAction): LoginSt
 
                 return {
                     ...state,
-                    isAuthenticated: true,
+                    isAuthenticated: false,
                     onCloseClicked: false,
                     user: action.payload.result,
                 };
@@ -59,7 +59,7 @@ export default (state: LoginState = initialState, action?: LoginAction): LoginSt
         case getType(loginAsync.failure):
             return {
                 ...state,
-                isAuthenticated: true,
+                isAuthenticated: false,
                 user: {
                     errors: action.payload,
                 },
@@ -75,7 +75,7 @@ export default (state: LoginState = initialState, action?: LoginAction): LoginSt
 
             return {
                 ...state,
-                isAuthenticated: true,
+                isAuthenticated: false,
                 onCloseClicked: true,
                 user: action.payload
                     ? {
@@ -89,7 +89,7 @@ export default (state: LoginState = initialState, action?: LoginAction): LoginSt
             const user = jwt.decode(action.payload.token);
             return {
                 ...state,
-                isAuthenticated: true,
+                isAuthenticated: isEmpty(user.errors),
                 onCloseClicked: false,
                 user,
             };

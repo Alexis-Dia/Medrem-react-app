@@ -1,5 +1,6 @@
 export enum AppPath {
 	HOME = "/",
+	LOGIN = "/login",
 	USERS = "/users",
 	SYSTEM_INFORMATION = "/system-information",
 	SQL_SCRIPTS = "/sql-scripts",

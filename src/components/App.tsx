@@ -7,6 +7,8 @@ import FlashErrorView from "../layouts/NavigationBarLayout/FlashErrorView/FlashE
 import FlashMessagesView from "../layouts/NavigationBarLayout/FlashMessagesView/FlashMessagesView";
 import AppWrapper from "./AppWrapper";
 import { AppPath } from "../properties/appPath";
+import LoginView from "../routes/loginView/LoginView";
+import FooterLayout from "../layouts/FooterLayout/FooterLayout";
 //TODO add IE support (addLocaleData is removed)
 /* require('@formatjs/intl-pluralrules/polyfill');
 require('@formatjs/intl-pluralrules/locale-data/de');
@@ -30,13 +32,25 @@ class App extends React.Component<Props> {
     render() {
         return (
             <AppWrapper store={this.props.store}>
-                <div>
-                    <NavigationBarLayout />
-                    <FlashErrorView />
-                    <FlashMessagesView />
-                    <Router history={browserHistory}>
-                        <Route exact path={AppPath.HOME} component={HomeView} />
-                    </Router>
+                <div id="container"
+                     style={{
+                         minHeight: '100%',
+                         //position:'relative'
+                }}>
+                    <div id="header">
+                        <NavigationBarLayout />
+                    </div>
+                    <div id="body" style={{ padding: '10px', paddingBottom:'60px'}}>
+                        <FlashErrorView />
+                        <FlashMessagesView />
+                        <Router history={browserHistory}>
+                            <Route exact path={AppPath.HOME} component={HomeView} />
+                            <Route exact path={AppPath.LOGIN} component={LoginView} />
+                        </Router>
+                    </div>
+                    <div id="footer" style={{ position: 'absolute', bottom:'0', width: '100%', height:'60px', background: '#f2f2f2', borderTop: '1px solid #DADADA'}}>
+                        <FooterLayout />
+                    </div>
                 </div>
             </AppWrapper>
         );
