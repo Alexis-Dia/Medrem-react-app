@@ -50,7 +50,6 @@ export const withAuth = (WrappedComponent: any, delayed = true) => {
             return (this.state.hidden
                     ? null
                     : isAuthenticated ? <WrappedComponent {...this.props.match.params} /> : <LoginView />
-                    //: isAuthenticated ? <WrappedComponent {...this.props.match.params} /> : <div>rrr3/</div>
             );
         };
     }

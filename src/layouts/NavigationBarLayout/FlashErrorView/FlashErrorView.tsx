@@ -1,11 +1,8 @@
 import React from "react";
-import { FormattedMessage } from "react-intl";
 import { connect, ConnectedProps } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import { RootState } from "../../../store/reducers";
 import { closeError } from "../../../api/error/errorActions";
-import FlashMessage from "../FlashMessage/FlashMessage";
 import { FlashMessageType } from "../../../types/flash";
 import "./FlashErrorView.scss";
 
@@ -22,17 +19,6 @@ class FlashErrorView extends React.PureComponent<Props, State> {
             isDetailsModalOpen: false,
         };
     }
-
-    toggleDetailsModal = () => {
-        this.setState((previousState) => ({
-            isDetailsModalOpen: !previousState.isDetailsModalOpen,
-        }));
-    };
-
-    handleCloseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.persist();
-        this.props.closeError();
-    };
 
     render = () => {
         //const { errorState } = this.props;

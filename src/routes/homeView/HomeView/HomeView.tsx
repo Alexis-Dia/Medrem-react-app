@@ -1,9 +1,7 @@
 import React from "react";
 import { connect, ConnectedProps } from "react-redux";
 import { injectIntl, WrappedComponentProps } from "react-intl";
-import browserHistory from "../../history";
 import "./HomeView.scss";
-import { AppPath } from "../../../properties/appPath";
 
 type Props = PropsFromRedux & WrappedComponentProps
 

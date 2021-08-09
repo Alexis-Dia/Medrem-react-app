@@ -10,6 +10,7 @@ import { RootState } from "../store/reducers";
 import { IntlProvider } from "react-intl";
 import { SnackbarProvider } from "notistack";
 import { Button } from "material-ui-old-core";
+import { LANGUAGE_DEFAULT} from "../properties/properties";
 
 interface Props extends PropsFromRedux {
     children: JSX.Element;
@@ -32,7 +33,7 @@ class AppWrapper extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            language: 'EN',
+            language: LANGUAGE_DEFAULT,
         };
     }
 

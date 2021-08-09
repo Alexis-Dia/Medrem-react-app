@@ -1,13 +1,12 @@
 /* eslint-disable react/no-did-mount-set-state */
 import React from "react";
-import { Language } from "../../types/common/Language";
+import { Language } from "../../types/common";
 import { connect, ConnectedProps } from "react-redux";
 import { WrappedComponentProps, injectIntl } from "react-intl";
 import { withSnackbar } from "notistack";
 import { bindActionCreators } from "redux";
 import {
-    EN,
-    I18,
+    I18, LANGUAGE_DEFAULT,
     TIME_OF_LOG_IN_POP_UP,
 } from "../../properties/properties";
 import { changeLocale } from "../../api/lang/localeActions";
@@ -41,7 +40,7 @@ class FooterLayout extends React.Component<Props, State> {
             isOffersItemOpen: false,
             isSqlItemOpen: false,
             isSystemInformationModalOpen: false,
-            language: 'EN',
+            language: LANGUAGE_DEFAULT,
         };
         this.onUnload = this.onUnload.bind(this);
     }

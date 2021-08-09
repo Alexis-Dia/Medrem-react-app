@@ -1,18 +1,4 @@
 export enum AppPath {
 	HOME = "/",
-	LOGIN = "/login",
-	USERS = "/users",
-	SYSTEM_INFORMATION = "/system-information",
-	SQL_SCRIPTS = "/sql-scripts",
-	SETTINGS = "/settings",
-	ROLES = "/roles",
-	REPORT_MAPPING = "/report-mapping",
-	PASSWORD_RESET = "/password_reset",
-	KPI = "/kpi",
-	EMAIL_TEMPLATES = "/email-templates",
-	DOCUMENTS_CONTRACT_TYPE_MODE_CONTRACT_ID = "/documents/:contractType/:mode/:contractId",
-	DOCUMENTS_PATH = "/documents/:path",
-	DOCUMENTS = "/documents",
-	PASSWORD_CONFIRM_HASH = "/password/confirm/:hash",
-	SCM_OBJECTS = "/scm/objects",
+	LOGIN = "/login"
 }
