@@ -8,7 +8,6 @@ import fr from "../../public/i18n/fr.json";
 import { connect, ConnectedProps, Provider } from "react-redux";
 import { RootState } from "../store/reducers";
 import { IntlProvider } from "react-intl";
-//import { CommonUtils } from "../utils";
 import { SnackbarProvider } from "notistack";
 import { Button } from "material-ui-old-core";
 
