@@ -1,6 +1,7 @@
 /* eslint-disable react/no-did-mount-set-state */
 import React from "react";
 import { Language } from "../../types/common/Language";
+import { ModalBody } from "reactstrap";
 import { connect, ConnectedProps } from "react-redux";
 import { FormattedMessage, injectIntl, WrappedComponentProps } from "react-intl";
 import { Helmet } from "react-helmet";
@@ -262,6 +263,8 @@ class NavigationBarLayout extends React.Component<Props, State> {
                         maxWidth="md"
                         onClose={() => this.toggleSystemInformationModal()}
                     >
+                        <ModalBody>
+                        </ModalBody>
                     </Dialog>
                 </React.Fragment>
             </MuiThemeProvider>

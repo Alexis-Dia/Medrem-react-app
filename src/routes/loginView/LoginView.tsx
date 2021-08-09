@@ -36,8 +36,8 @@ class LoginView extends React.Component<Props, State> {
             username: this.state.username,
             password: this.state.password,
             errors: {
-                invalidCredentials: this.props.intl.formatMessage({ id: "messageInvalidCredentials" }),
-                serverIsUnreachable: this.props.intl.formatMessage({ id: "messageServerIsUnreachable" }),
+                invalidCredentials: this.props.intl.formatMessage({ id: "messageInvalidCredentials", defaultMessage: "Invalid credentials" }),
+                serverIsUnreachable: this.props.intl.formatMessage({ id: "messageServerIsUnreachable", defaultMessage: "Server is unreachable" }),
             },
         });
     };
@@ -75,7 +75,7 @@ class LoginView extends React.Component<Props, State> {
                                     onChange={this.handleChange}
                                     name="username"
                                     className="form-control"
-                                    placeholder={this.props.intl.formatMessage({ id: "username" })}
+                                    placeholder={this.props.intl.formatMessage({ id: "username", defaultMessage: "username" })}
                                 />
                             </div>
 
@@ -88,7 +88,7 @@ class LoginView extends React.Component<Props, State> {
                                     name="password"
                                     type="password"
                                     className="form-control"
-                                    placeholder={this.props.intl.formatMessage({ id: "password" })}
+                                    placeholder={this.props.intl.formatMessage({ id: "password", defaultMessage: "password" })}
                                 />
                             </div>
                             <p>
