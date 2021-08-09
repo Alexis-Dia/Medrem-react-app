@@ -44,8 +44,6 @@ export default (state: LoginState = initialState, action?: LoginAction): LoginSt
 
                 setAuthorizationToken(token);
 
-                const user = jwt.decode(token);
-
                 return {
                     ...state,
                     isAuthenticated: false,
