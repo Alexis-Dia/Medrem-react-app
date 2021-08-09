@@ -1,8 +1,7 @@
 import { takeEvery, call, put } from "redux-saga/effects";
-import { loginApi, healthCheckApi } from "./loginApi";
-import { healthCheckAsync, loginAsync } from "./loginActions";
+import { loginApi } from "./loginApi";
+import { loginAsync } from "./loginActions";
 import { Response, SuccessResponse } from "../../types/api";
-import { handleResponse } from "../helper/sagaHelper";
 import { HttpStatus } from "../../types/common/HttpStatus";
 import { UserErrors } from "./types";
 
@@ -21,11 +20,4 @@ export function * login() {
     yield takeEvery(loginAsync.request, tryLogin);
 }
 
-function * tryHealthCheck(): Generator {
-    const response = <Response> (yield call(healthCheckApi));
-    yield handleResponse(healthCheckAsync, response);
-}
 
-export function * healthCheck() {
-    yield takeEvery(healthCheckAsync.request, tryHealthCheck);
-}

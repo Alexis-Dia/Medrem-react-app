@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { APPLICATION_JSON, BEARER, FEATURES, HOSTNAME, IDENTITY, JSON_TYPE, JWT_TOKEN, PORT, POST, ROLES, USERNAME, UTC_FORMAT } from "../../properties/properties";
+import { BEARER, FEATURES, HOSTNAME, IDENTITY, JSON_TYPE, JWT_TOKEN, PORT, POST, ROLES, USERNAME, UTC_FORMAT } from "../../properties/properties";
 import setAuthorizationToken from "../../utils/setAuthorizationToken";
 
 import project from "../../../project.config";
@@ -12,14 +12,26 @@ export const getUrl = (hostname: string, port: number, pathMethod: string) => (p
 );
 
 export const apiCall = (pathMethod: string, body = {}, method = POST, hostname = HOSTNAME, port = PORT) => {
+
+    const FormData = require("form-data");
+    const bodyFormData = new FormData();
+    bodyFormData.append('username', 'alexeydruzik@gmail.com');
+    bodyFormData.append('password', 'Fred');
+
+    const formUrlEncode = x =>
+        Object.keys(x).reduce((p, c) => p + `&${c}=${encodeURIComponent(x[c])}`, '')
+
+    const formUrlEncoded = formUrlEncode({username: 'alexeydruzik@gmail.com', password: 'Fred'}).substring(1);
+    console.log(formUrlEncoded)
+
     const options = {
         method,
-        url: getUrl(hostname, port, pathMethod),
+        url: "http://212.98.167.242:13312/api/login",
         headers: {
-            "Content-Type": APPLICATION_JSON,
+            "Content-Type": "application/x-www-form-urlencoded",
         },
         responseType: JSON_TYPE,
-        data: body,
+        data: formUrlEncoded,
     };
     return axios(options).catch((error) => {
         throw error;

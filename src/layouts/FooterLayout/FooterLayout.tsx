@@ -53,7 +53,6 @@ import { FlashMessageType } from "../../types/flash";
 import { RootState } from "../../store/reducers";
 import browserHistory from "../../routes/history";
 import LogoIcon from "./img/navigationBarLayout/medrem-logo.png";
-import PublishedSystemInformation from "../../routes/homeView/PublishedSystemInformation/PublishedSystemInformation";
 import "./FooterLayout.scss";
 import { WithSnackbarProps } from "../../lib/notistack/build";
 

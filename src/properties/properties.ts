@@ -6,10 +6,10 @@ export const GET: Method = "GET";
 export const DELETE: Method = "DELETE";
 export const PUT: Method = "PUT";
 
-export const HOSTNAME = "localhost";
-export const PORT = 8443;
+export const HOSTNAME = "http://212.98.167.242/";
+export const PORT = 13312;
 
-export const PATH_METHOD_AUTHENTICATE = "/authenticate";
+export const PATH_METHOD_AUTHENTICATE = "/api/login";
 export const PATH_HEALTH_CHECK = "/health/check";
 
 export const PATH_METHOD_CUSTOMERS_LOAD = "/customer/load/";
@@ -34,7 +34,7 @@ export const PATH_METHOD_SETTING_MODIFY = "/setting/modify/";
 
 export const PATH_METHOD_LANGUAGES_LOAD_ALL = "/common/language/load";
 
-export const HTTPS = "HTTPS://";
+export const HTTPS = "HTTP://";
 export const WS = "/ws";
 export const DELIMITER = ":";
 export const DOUBLE_SLASH = "//";

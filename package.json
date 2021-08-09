@@ -15,6 +15,8 @@
   },
   "scripts": {
     "compile": "node build/scripts/compile",
+    "prebuild": "java -jar translator-app.jar -so 1cljFCrA8Ygt27cidrRdPJ-lW3RBF-o14ztJPnh_snnQ -sh soos-translations -p /public --server.port=8081",
+    "prestart": "java -jar translator-app.jar -so 1cljFCrA8Ygt27cidrRdPJ-lW3RBF-o14ztJPnh_snnQ -sh soos-translations -p /public --server.port=8082",
     "build": "set NODE_OPTIONS=--max_old_space_size=2048 && cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",
     "build:test": "set NODE_OPTIONS=--max_old_space_size=2048 && npm run test && cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",
     "build-linux": "export NODE_OPTIONS=--max_old_space_size=2048 && cross-env NODE_ENV=production webpack --config webpack.prod.js --progress",

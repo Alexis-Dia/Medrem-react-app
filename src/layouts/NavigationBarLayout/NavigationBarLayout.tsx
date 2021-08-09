@@ -53,7 +53,6 @@ import { RootState } from "../../store/reducers";
 import browserHistory from "../../routes/history";
 import LogoIcon from "./img/navigationBarLayout/medrem-logo.png";
 import SystemInformationSnackbar from "./snackbar/SystemInformationSnackbar";
-import PublishedSystemInformation from "../../routes/homeView/PublishedSystemInformation/PublishedSystemInformation";
 import "./NavigationBarLayout.scss";
 import { WithSnackbarProps } from "../../lib/notistack/build";
 
@@ -317,9 +316,6 @@ class NavigationBarLayout extends React.Component<Props, State> {
                         maxWidth="md"
                         onClose={() => this.toggleSystemInformationModal()}
                     >
-                        <ModalBody>
-                            <PublishedSystemInformation />
-                        </ModalBody>
                     </Dialog>
                 </React.Fragment>
             </MuiThemeProvider>
